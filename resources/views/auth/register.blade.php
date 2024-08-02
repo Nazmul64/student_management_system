@@ -45,7 +45,6 @@
 
 <body>
     <section class="vh-100 bg-image"
-        style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -57,16 +56,49 @@
                                  @csrf
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form3Example1cg">Your Name</label>
-                                        <input id="name" type="text"class="form-control @error('name') is-invalid @enderror" name="name"value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        <input id="name" type="text"class="form-control @error('name') is-invalid @enderror" name="name"value="{{ old('name') }}"  autocomplete="name" autofocus>
                                         @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
+                                     <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="form3Example1cg">mobile</label>
+                                        <input id="mobile" type="number"class="form-control @error('mobile') is-invalid @enderror" name="mobile"value="{{ old('mobile') }}"  autocomplete="mobile" autofocus>
+                                        @error('mobile')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                     <div data-mdb-input-init class="form-outline mb-4">
+                                        <label class="form-label" for="form3Example1cg">address</label>
+                                        <input id="address" type="text"class="form-control @error('address') is-invalid @enderror" name="address"value="{{ old('address') }}"  autocomplete="address" autofocus>
+                                        @error('address')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                     
+                                    <div class="form-outline mb-4">
+                                        <select class="form-control @error('gender') is-invalid @enderror" name="gender">
+                                            <option value="" disabled selected>Select Gender</option>
+                                            <option value="Male" {{ 'gender' == 'Male' ? 'selected' : '' }}>Male</option>
+                                            <option value="Female" {{'gender' == 'Female' ? 'selected' : '' }}>Female</option>
+                                        </select>
+                                        @error('gender')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+                                    
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form3Example3cg">Your Email</label>
-                                        <input id="email" type="email"class="form-control @error('email') is-invalid @enderror" name="email"value="{{ old('email') }}" required autocomplete="email">
+                                        <input id="email" type="email"class="form-control @error('email') is-invalid @enderror" name="email"value="{{ old('email') }}"  autocomplete="email">
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -75,7 +107,7 @@
                                     </div>
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <label class="form-label" for="form3Example4cg">Password</label>
-                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -83,11 +115,17 @@
                                         @enderror
                                     </div>
                                     <div data-mdb-input-init class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example4cdg">Confirmation password</label>
+                                        <label class="form-label" for="password-confirm">Confirmation Password</label>
                                         <div class="col-md-6">
-                                            <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" required autocomplete="new-password">
+                                              <input id="password-confirm" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation"  autocomplete="new-password">
                                         </div>
+                                        @error('password_confirmation')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
+
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                                     </div>

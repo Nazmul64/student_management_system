@@ -32,7 +32,7 @@
                                     </div>
                                     <h3 class="profile-username text-center">{{ $user->name }}</h3>
                                     <p class="text-muted text-center">{{ $user->address}}</p>
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered w-100">
                                         <tbody>
                                              <tr>
                                                  <td>Email</td>

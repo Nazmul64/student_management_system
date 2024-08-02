@@ -25,6 +25,8 @@ Route::prefix('users')->group(function () {
 Route::prefix('profile')->group(function () {
    Route::get('/view', [ProfileController::class, 'view'])->name('profile.view');
    Route::get('/profile.edit/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
-   Route::post('/profile.update/{id}', [ProfileController::class, 'update'])->name('profile.update');
+   Route::post('/profile.update/{id}', [ProfileController::class, 'edit'])->name('profile.update');
+   Route::get('/profile/password/view/', [ProfileController::class, 'passwordview'])->name('profile.passwordview');
+   Route::POST('/profile/password/update', [ProfileController::class, 'passwordupdate'])->name('profile.passwordupdate');
 });
 

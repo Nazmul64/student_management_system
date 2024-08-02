@@ -83,7 +83,7 @@
                                    @enderror
                             </div>
                               <div class="col-md-4 py-2">
-                                  <img id="showImage" src="{{ !empty($edit->image) ? asset('upload/user_images/'.$edit->image) : asset('upload/avatar5.png') }}"style="width:150px;height:160px;border:1px solid #000;">
+                                  <img id="showImage" src="{{asset('upload/user_images/'.Auth::user()->image)}}"style="width:150px;height:160px;border:1px solid #000;">
                             </div>
                            <div class="col-md-12 py-2">
                               <button type="submit" value="submit" class="btn btn-primary mt-2">Update</button>

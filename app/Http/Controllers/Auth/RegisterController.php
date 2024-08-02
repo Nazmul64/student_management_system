@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Http\Controllers\Auth;
 
@@ -52,6 +52,10 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'mobile'=>['required', 'string', 'max:255'],
+            'address'=>['required', 'string', 'max:255'],
+            'gender'=>['required', 'string', 'max:255'],
+            'password_confirmation' => ['required'],
         ]);
     }
 
@@ -66,6 +70,10 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'mobile'=>$data['mobile'],
+            'address'=>$data['address'],
+            'gender'=>$data['gender'],
+            'password_confirmation'=>$data['password_confirmation'],
             'password' => Hash::make($data['password']),
         ]);
     }

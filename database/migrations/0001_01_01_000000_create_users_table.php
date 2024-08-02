@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('mobile')->nullable();
             $table->string('address')->nullable();
             $table->string('gender')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->default('avatar5.png');
             $table->tinyInteger('status')->default(1);
             $table->rememberToken();
             $table->timestamps();

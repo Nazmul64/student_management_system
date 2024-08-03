@@ -42,8 +42,8 @@ function update(Request $request){
     ]);
     return back()->with('success','Data update successful');
   }
-}
-function passwordview(){
+
+function passwordview (){
    return view('backend.profile.passview');
 }
 function passwordupdate(Request $request){
@@ -64,4 +64,6 @@ function passwordupdate(Request $request){
         }else{
              return back()->with('success','Password Confirm Password updated successfully');
         }
+}
+
 }

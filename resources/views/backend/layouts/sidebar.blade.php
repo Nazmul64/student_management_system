@@ -93,6 +93,24 @@
                       <p>Student Group</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('shift.view') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Student Shift</p>
+                    </a>
+                  </li>
+                 <li class="nav-item">
+                    <a href="{{ route('categoryfee.view') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Category Fee</p>
+                    </a>
+                  </li>
+                   <li class="nav-item">
+                    <a href="{{ route('amountfee.view') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Amount Fee</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
 

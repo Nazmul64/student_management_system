@@ -9,6 +9,9 @@ use App\Http\Controllers\Backend\Setup\StudentController;
 use App\Http\Controllers\Backend\FrontenController;
 use App\Http\Controllers\Backend\Setup\YearController;
 use App\Http\Controllers\Backend\GroupController;
+use App\Http\Controllers\Backend\ShiftController;
+use App\Http\Controllers\Backend\CategoryfeeController;
+use App\Http\Controllers\Backend\AmountController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -58,5 +61,24 @@ Route::prefix('setups')->group(function () {
    Route::get('/student/group/edit/{id}', [GroupController::class, 'edit'])->name('group.edit');
    Route::post('/student/group/update/{id}', [GroupController::class, 'update'])->name('group.update');
    Route::get('/student/group/delete/{id}', [GroupController::class, 'delete'])->name('group.delete');
+
+   // shift 
+   Route::get('/student/shift/view', [ShiftController::class, 'view'])->name('shift.view');
+   Route::get('/student/shift/add', [ShiftController::class, 'add'])->name('shift.add');
+   Route::post('/student/shift/store', [ShiftController::class, 'store'])->name('shift.store');
+   Route::get('/student/shift/edit/{id}', [ShiftController::class, 'edit'])->name('shift.edit');
+   Route::Post('/student/shift/update/{id}', [ShiftController::class, 'update'])->name('shift.update');
+   Route::get('/student/shift/delete/{id}', [ShiftController::class, 'delete'])->name('shift.delete');
+
+   // category fee
+  Route::get('/student/categoryfee/view', [CategoryfeeController::class, 'view'])->name('categoryfee.view');
+  Route::get('/student/categoryfee/add', [CategoryfeeController::class, 'add'])->name('categoryfee.add');
+  Route::post('/student/categoryfee/store', [CategoryfeeController::class, 'store'])->name('categoryfee.store');
+  Route::get('/student/categoryfee/edit/{id}', [CategoryfeeController::class, 'edit'])->name('categoryfee.edit');
+  Route::post('/student/categoryfee/update/{id}', [CategoryfeeController::class, 'update'])->name('categoryfee.update');
+  Route::get('/student/categoryfee/delete/{id}', [CategoryfeeController::class, 'delete'])->name('categoryfee.delete');
+
+  // Amount Fee
+  Route::get('/student/amountfee/view', [AmountController::class, 'view'])->name('amountfee.view');
 });
 

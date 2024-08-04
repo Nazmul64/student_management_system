@@ -87,8 +87,15 @@
                       <p>View Year</p>
                     </a>
                   </li>
+                   <li class="nav-item">
+                    <a href="{{ route('group.view') }}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Student Group</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
+
               <li class="nav-item">
                 <a class="dropdown-item nav-link" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     <i class="nav-icon fas fa-copy"></i>

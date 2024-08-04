@@ -8,7 +8,7 @@ use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\Setup\StudentController;
 use App\Http\Controllers\Backend\FrontenController;
 use App\Http\Controllers\Backend\Setup\YearController;
-
+use App\Http\Controllers\Backend\GroupController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -51,5 +51,12 @@ Route::prefix('setups')->group(function () {
    Route::get('/student/year/edit/{id}', [YearController::class, 'edit'])->name('year.edit');
    Route::POST('/student/year/update/{id}', [YearController::class, 'update'])->name('year.update');
    Route::get('/student/year/delete/{id}', [YearController::class, 'delete'])->name('year.delete');
+   // student group
+   Route::get('/student/group/view', [GroupController::class, 'view'])->name('group.view');
+   Route::get('/student/group/add', [GroupController::class, 'add'])->name('group.add');
+   Route::post('/student/group/store', [GroupController::class, 'store'])->name('group.store');
+   Route::get('/student/group/edit/{id}', [GroupController::class, 'edit'])->name('group.edit');
+   Route::post('/student/group/update/{id}', [GroupController::class, 'update'])->name('group.update');
+   Route::get('/student/group/delete/{id}', [GroupController::class, 'delete'])->name('group.delete');
 });
 
